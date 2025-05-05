@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-    <title>Wedding Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <title>Wedding Agency Website</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,7 +15,10 @@
     <!-- HEADER : START -->
     <header>
       <a href="/" class="logo">Wedding</a>
-      <a href="#" class="menu"><ion-icon name="menu-outline"></ion-icon></a>
+      <a href="#" class="menu" onclick="toggleMenu()">
+        <ion-icon class="open" name="menu-outline"></ion-icon>
+        <ion-icon class="close" name="close-outline"></ion-icon>
+      </a>
       <ul class="nav">
         <li>
           <a href="/" class="nav-btn active" onclick="resetHeader()">
@@ -38,6 +42,25 @@
     <!-- HEADER : END -->
 
     <!-- MOBILE NAVIGATION : START -->
+    <ul class="nav-mobile">
+      <li>
+        <a href="/" class="nav-btn active" onclick="resetHeader()">
+          <ion-icon name="home-outline"></ion-icon>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-btn" data-target="about">About</a>
+      </li>
+      <li>
+        <a href="#" class="nav-btn" data-target="services">Services</a>
+      </li>
+      <li>
+        <a href="#" class="nav-btn" data-target="gallery">Gallery</a>
+      </li>
+      <li>
+        <a href="#" class="nav-btn" data-target="contact">Contact</a>
+      </li>
+    </ul>
     <!-- MOBILE NAVIGATION : END -->
 
     <!-- BANNER : START -->
@@ -66,11 +89,11 @@
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate non doloribus atque iste aut cum totam omnis dolores rerum laudantium.</p>
         </div>
         <div class="circle bg">
-          <img src="./img/wedding-2.jpg" alt="wedding-2" />
+          <img src="./img/wedding-8.jpg" alt="wedding-2" />
           <div class="circle large">
-            <img src="./img/wedding-2.jpg" alt="" />
+            <img src="./img/wedding-8.jpg" alt="" />
             <div class="circle small">
-              <img src="./img/wedding-2.jpg" alt="" />
+              <img src="./img/wedding-8.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -110,7 +133,7 @@
       </div>
 
       <div class="lead">
-        <svg viewBox="0 0 100 100" width="100" height="100">
+        <svg viewBox="0 0 100 100" width="80" height="80">
           <defs>
             <path
               id="circle"
@@ -253,12 +276,12 @@
             </div>
             <div class="col-lg-4 col-md-6 gallery-item filter-wedding">
               <div class="gallery-img">
-                <img src="./img/portfolio-2.jpg" class="img-fluid" />
+                <img src="./img/wedding-12.jpg" class="img-fluid" />
               </div>
               <div class="gallery-info">
                 <h4>Wedding Plan 2</h4>
                 <p>Wedding Plan 2</p>
-                <a href="./img/portfolio-2.jpg" data-gallery="portfolioGallery" class="gallery-lightbox preview-link" title="Wedding Plan 2">
+                <a href="./img/wedding-12.jpg" data-gallery="portfolioGallery" class="gallery-lightbox preview-link" title="Wedding Plan 2">
                   <ion-icon name="add-outline"></ion-icon>
                 </a>
                 <a href="#" class="details-link" title="More Details">
@@ -271,9 +294,54 @@
                 <img src="./img/portfolio-3.jpg" class="img-fluid" />
               </div>
               <div class="gallery-info">
-                <h4>Wedding Plan 2</h4>
-                <p>Wedding Plan 2</p>
-                <a href="./img/portfolio-3.jpg" data-gallery="portfolioGallery" class="gallery-lightbox preview-link" title="Wedding Plan 2">
+                <h4>Wedding Plan 3</h4>
+                <p>Wedding Plan 3</p>
+                <a href="./img/portfolio-3.jpg" data-gallery="portfolioGallery" class="gallery-lightbox preview-link" title="Wedding Plan 3">
+                  <ion-icon name="add-outline"></ion-icon>
+                </a>
+                <a href="#" class="details-link" title="More Details">
+                  <ion-icon name="link-outline"></ion-icon>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 gallery-item filter-wedding">
+              <div class="gallery-img">
+                <img src="./img/portfolio-4.jpg" class="img-fluid" />
+              </div>
+              <div class="gallery-info">
+                <h4>Ceremony Plan 1</h4>
+                <p>Ceremony Plan 1</p>
+                <a href="./img/portfolio-4.jpg" data-gallery="portfolioGallery" class="gallery-lightbox preview-link" title="Ceremony Plan 1">
+                  <ion-icon name="add-outline"></ion-icon>
+                </a>
+                <a href="#" class="details-link" title="More Details">
+                  <ion-icon name="link-outline"></ion-icon>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 gallery-item filter-wedding">
+              <div class="gallery-img">
+                <img src="./img/portfolio-2.jpg" class="img-fluid" />
+              </div>
+              <div class="gallery-info">
+                <h4>Ceremony Plan 2</h4>
+                <p>Ceremony Plan 2</p>
+                <a href="./img/portfolio-2.jpg" data-gallery="portfolioGallery" class="gallery-lightbox preview-link" title="Ceremony Plan 2">
+                  <ion-icon name="add-outline"></ion-icon>
+                </a>
+                <a href="#" class="details-link" title="More Details">
+                  <ion-icon name="link-outline"></ion-icon>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 gallery-item filter-wedding">
+              <div class="gallery-img">
+                <img src="./img/portfolio-5.jpg" class="img-fluid" />
+              </div>
+              <div class="gallery-info">
+                <h4>Ceremony Plan 3</h4>
+                <p>Ceremony Plan 3</p>
+                <a href="./img/portfolio-5.jpg" data-gallery="portfolioGallery" class="gallery-lightbox preview-link" title="Ceremony Plan 2">
                   <ion-icon name="add-outline"></ion-icon>
                 </a>
                 <a href="#" class="details-link" title="More Details">
@@ -287,7 +355,67 @@
       <!-- GALLERY : END -->
 
       <!-- CONTACT : START -->
-      <section id="contact" class="contact"></section>
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="row">
+            <h1>Contact Us</h1>
+          </div>
+          <!-- MAP -->
+          <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3944935482336!2d106.8893341!3d-6.2115887999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4a1da65265b%3A0x3df5b5bdaf76feb5!2sSLOG%20POLRI!5e0!3m2!1sid!2sid!4v1746411830698!5m2!1sid!2sid"
+              width="100%"
+              height="270px"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="row mt-5">
+            <div class="col-lg-4">
+              <div class="info">
+                <div class="address">
+                  <ion-icon name="location-outline"></ion-icon>
+                  <h4>Location</h4>
+                  <p>Jl. Sayang Kamu Banget Muaacchh, Jakarta, Indonesia</p>
+                </div>
+                <div class="email">
+                  <ion-icon name="mail-outline"></ion-icon>
+                  <h4>Email :</h4>
+                  <p>weddingexample@example.com</p>
+                </div>
+                <div class="phone">
+                  <ion-icon name="call-outline"></ion-icon>
+                  <h4>Call :</h4>
+                  <p>+62 8123456789</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8 mt-5 mt-lg-0">
+              <form>
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input type="text" class="form-control" placeholder="Your Name" required />
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input type="email" class="form-control" placeholder="Your Email" required />
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <input type="text" class="form-control" placeholder="Subject" required />
+                </div>
+                <div class="form-group mt-3">
+                  <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" required></textarea>
+                </div>
+                <div class="text-center">
+                  <button type="submit">Send Message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- CONTACT : END -->
     </main>
     <!-- MAIN : END -->
@@ -296,7 +424,11 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
     <!-- JS Vendor : END -->
+    <script src="js/main.js"></script>
+    <script src="js/isotope.js"></script>
+    <script src="js/glightbox.js"></script>
   </body>
 </html>

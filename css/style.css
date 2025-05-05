@@ -59,6 +59,22 @@ header.active {
   transition: 0.5s;
 }
 
+.menu .open {
+  display: block;
+}
+
+.menu .close {
+  display: none;
+}
+
+.menu.active .open {
+  display: none;
+}
+
+.menu.active .close {
+  display: block;
+}
+
 .nav {
   display: flex;
 }
@@ -125,6 +141,58 @@ header.active {
   transition: 0.5s;
 }
 /* HEADER : END */
+
+/* MOBILE NAVIGATION : START */
+.nav-mobile {
+  display: none;
+}
+
+.nav-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #ffff;
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  z-index: 1200;
+  gap: 20px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.nav-mobile.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-mobile li {
+  position: relative;
+  list-style: none;
+}
+
+.nav-mobile li a {
+  color: #222222;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 300;
+  padding: 10px;
+}
+
+.nav-mobile li a:hover {
+  color: var(--primary);
+}
+/* MOBILE NAVIGATION : END */
 
 /* BANNER : START */
 .banner {
@@ -247,7 +315,7 @@ header.active {
   visibility: visible;
 }
 
-.bg-slide.active .circle.small {
+.bg-slide.active .circle.large {
   transform: translate(0, 0) rotateZ(720deg);
   opacity: 1;
   visibility: visible;
@@ -342,6 +410,7 @@ header.active {
 
 .lead {
   position: absolute;
+  padding-top: 100px;
   bottom: 0;
   z-index: 1000;
   width: 300px;
@@ -353,13 +422,14 @@ header.active {
 
 .move-down {
   position: absolute;
+  padding-top: 12px;
   z-index: 1100;
   color: #111111;
   animation: flink 1s linear infinite;
 }
 
 .move-down ion-icon {
-  font-size: 2em;
+  font-size: 1.8em;
 }
 
 @keyframes flink {
@@ -377,7 +447,7 @@ header.active {
   z-index: 1100;
   fill: currentColor;
   height: auto;
-  max-width: 20vmin;
+  max-width: 18vmin;
   transform-origin: center;
   width: 66%;
   animation: spin 10s linear infinite;
@@ -713,3 +783,201 @@ section p {
   opacity: 1;
 }
 /* GALLERY : END */
+
+/* CONTACT : START */
+.contact h1 {
+  margin-bottom: 50px;
+}
+
+.contact .info {
+  width: 100%;
+  background: #ffffff;
+}
+
+.contact .info ion-icon {
+  font-size: 0.7em;
+  padding: 8px;
+  color: var(--primary);
+  float: left;
+  width: 45px;
+  height: 45px;
+  background: #f4e3ea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  margin-right: 20px;
+}
+
+.contact .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 1.6em;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111111;
+}
+
+.contact .info p {
+  padding: 0 0 0 60px;
+  font-size: 0.9em;
+  font-weight: 300;
+  margin-bottom: 0;
+  color: #111111;
+}
+
+.contact .info .email,
+.contact .info .phone {
+  margin-top: 35px;
+}
+
+.contact form {
+  width: 100%;
+  background: #ffffff;
+}
+
+.contact form .form-group {
+  padding-bottom: 8px;
+}
+
+.contact form input,
+.contact form textarea {
+  border-radius: 0;
+  box-shadow: none !important;
+  outline: none;
+  font-size: 15px;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.contact form input {
+  height: 45px;
+}
+
+.contact form textarea {
+  padding: 10px 12px;
+}
+
+.contact form button[type="submit"] {
+  background: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 10px 25px;
+  color: #ffffff;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+.contact form button[type="submit"]:hover {
+  background: #ffffff;
+  color: var(--primary);
+}
+/* CONTACT : END */
+
+/* RESPONSIVE DESIGN : START */
+@media (max-width: 768px) {
+  header {
+    padding: 30px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .banner {
+    padding: 120px 30px;
+  }
+
+  .bg-slide .content {
+    width: 80vw;
+  }
+
+  .bg-slide .content h1 {
+    font-size: 2.5em;
+  }
+
+  .bg-slide .content p {
+    font-size: 0.9em;
+  }
+
+  .circle.bg {
+    width: 140vh;
+    height: 140vh;
+  }
+
+  .circle.large {
+    width: 70vh;
+    height: 70vh;
+  }
+
+  .circle.small {
+    width: 35vh;
+    height: 35vh;
+  }
+
+  .bg-slide.active .circle.bg {
+    transform: translate(0, 0) rotateZ(0deg);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .bg-slide.active .circle.large {
+    transform: translate(0, 0) rotateZ(360deg);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .bg-slide.active .circle.small {
+    transform: translate(0, 0) rotateZ(-720deg);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .lead {
+    bottom: 100px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .move-down ion-icon {
+    font-size: 2em;
+  }
+
+  .slide-loader {
+    bottom: 20px;
+  }
+
+  .share {
+    left: 5px;
+  }
+
+  section.section-show {
+    padding: 150px 30px 100px;
+  }
+
+  .about .img-box img {
+    max-width: 80vw;
+  }
+
+  .about .img-box .corner-img {
+    width: 25vw;
+    right: -20px;
+  }
+
+  .about h4 {
+    margin-top: 50px;
+  }
+
+  .section-bg-img {
+    bottom: -500px;
+    right: 0px;
+  }
+}
+/* RESPONSIVE DESIGN : END */
